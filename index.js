@@ -57,7 +57,8 @@ function Chainable(functionMap, resolve) {
   };
 
 
-  return Object.keys(annotatedMap)
+  return Object
+    .keys(annotatedMap)
     .reduce((res, key) => {
       const fn = annotatedMap[key];
       res[key] = (...params) => Wrap([ fn(...params) ]);

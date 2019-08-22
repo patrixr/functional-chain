@@ -73,5 +73,16 @@ describe('Chain of asynchronous API requests', () => {
     });
   });
 
+  it('should enumerate applied operations', (done) => {
+    const userId = 1;
+    const operations = assignRole('king')
+      .andThen
+      .postComment('more wine !');
 
+    analyse(operations).should.deep.equal([
+      { assignRole:  ['king'] },
+      { postComment: ['more wine !']}
+    ]);
+    done();
+  });
 });
