@@ -55,6 +55,31 @@ const operation = multiplyBy(2)
   console.log(res) // -> 30
 ```
 
+## Analysing the chain
+
+An `analyse( chain )` method is provided which allows reflection and serialization of operation chains
+
+```javascript
+
+// ...
+
+const operation = multiplyBy(2)
+  .and.subtract(6)
+  .and.divideBy(2);
+
+analyse(operation);
+
+// output =>
+[
+  { multiplyBy:  [2] },
+  { subtract: [6]},
+  { divideBy: [2] }
+]
+
+
+```
+
+
 ## Usage case example: Redux reducer
 
 Let's write an example of a Redux store, which uses our chainable methods to apply transformations to the store.
@@ -130,7 +155,6 @@ createStore((state = initialState, action) => {
   }
   return { ...state, ...mut(state, action) };
 })
-
 ```
 
 
