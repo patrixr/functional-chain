@@ -38,6 +38,8 @@ const API = Chainable({
   return chain.reduce((mem, fn) => fn(mem), num);
 })
 
+const { multiplyBy } = API;
+
 const operation = multiplyBy(2)
   .and.subtract(6)
   .and.divideBy(2);
@@ -107,6 +109,8 @@ const API = Chainable({
 Now we use that in our store to define state transformations
 
 ```javascript
+const { increment, decrement } = require('./stateHelpers');
+
 const transformations = {
   "START_REQUEST": increment('requestCount')
     .and.updateLoading();
