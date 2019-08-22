@@ -24,16 +24,10 @@ function Chainable(functionMap, resolve) {
   const annotatedMap = annotate(functionMap);
 
   /**
-   * Function wrapper providing a chain api
-   *
-   * e.g Usage
-   *  let fn = m.set('users').andThen.increment('userCount')
-   *
-   *  fn(state, action) => returns the changes to apply to the state
-   *
+   * Function wrapping a list of transformative function
    *
    * @export
-   * @param {*} [chain=[]]
+   * @param {Function[]} [chain=[]]
    * @returns
    */
   function Wrap(chain = []) {
