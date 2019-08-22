@@ -1,0 +1,29 @@
+{
+  "name": "functional-chain",
+  "version": "1.0.0",
+  "description": "A small functional chain engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha  --colors --recursive tests/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrixr/functional-chain.git"
+  },
+  "keywords": [
+    "chain",
+    "functional",
+    "engine"
+  ],
+  "author": "Patrick R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrixr/functional-chain/issues"
+  },
+  "homepage": "https://github.com/patrixr/functional-chain#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
